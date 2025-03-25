@@ -18,7 +18,7 @@ products
 on categories.categoryid = products.categoryid;
 
 
-select c.categoryid as [Número de Categoria], 
+select c.categoryid as [Nï¿½mero de Categoria], 
 CategoryName as 'Nombre Categoria', ProductName as 'Nombre de Producto', 
 UnitsInStock as 'Existencia', UnitPrice as Precio
 from 
@@ -63,13 +63,13 @@ inner join [Order Details] as od
 on od.OrderID = o.OrderID
 where o.OrderDate between '1996-07-01' and '1996-10-31'
 
--- Consultas Básicas con inner join 
+-- Consultas Bï¿½sicas con inner join 
 
 -- 1.  Obtener los nombres de los clientes y los paises a los que se 
 -- enviaron sus pedidos
 
 select c.CompanyName as 'Nombre del Cliente', 
-o.ShipCountry as 'País de Envio'
+o.ShipCountry as 'Paï¿½s de Envio'
 from Orders as o
 inner join Customers as c
 on c.CustomerID = o.CustomerID
@@ -109,7 +109,7 @@ on o.EmployeeID = e.EmployeeID
 
 -- 5. Obtener el nombre del cliente, el numero de orden y la fecha de orden
    Select c.CompanyName as [Cliente], 
-   o.OrderID as [Número de Orden], o.OrderDate as [Fecha de Orden]
+   o.OrderID as [Nï¿½mero de Orden], o.OrderDate as [Fecha de Orden]
    from Customers as c
    inner join Orders as o
    on c.CustomerID = o.CustomerID
@@ -278,19 +278,19 @@ on o.EmployeeID = e.EmployeeID
  where o.ShipCountry = 'Germany'
 
  -- 13. Listar los productos junto con el nombre del 
- -- proveedor y el país de origen
+ -- proveedor y el paï¿½s de origen
 
  select p.ProductName as [Nombre Producto], 
  s.CompanyName as [Proveedor], 
- s.Country as [País de Origen]
+ s.Country as [Paï¿½s de Origen]
  from Products as p
  inner join Suppliers as s
  on p.SupplierID = s.SupplierID
  order by 1 asc
 
- -- 14. Obtener los pedidos agrupados por país de envio
+ -- 14. Obtener los pedidos agrupados por paï¿½s de envio
 
-    Select o.ShipCountry as [País de Envio], 
+    Select o.ShipCountry as [Paï¿½s de Envio], 
 	count(o.OrderID) as [Numero de Ordenes]
 	from Orders as o
 	group by o.ShipCountry 
@@ -388,7 +388,7 @@ order by 2 Desc
 -- cliente, ordenadolos por la cantidad de mayor de pedidos
 
 select concat(e.FirstName, ' ', e.LastName) as [Nombre]
-,count(OrderID) as [Número de Ordenes]
+,count(OrderID) as [Nï¿½mero de Ordenes]
 from Orders as o
 inner join Employees as e
 on o.EmployeeID = e.EmployeeID
@@ -399,7 +399,7 @@ order by [Nombre] asc
 
 select concat(e.FirstName, ' ', e.LastName) as [Nombre], 
 c.CompanyName as [Cliente]
-,count(OrderID) as [Número de Ordenes]
+,count(OrderID) as [Nï¿½mero de Ordenes]
 from Orders as o
 inner join Employees as e
 on o.EmployeeID = e.EmployeeID
@@ -480,7 +480,7 @@ having sum(od.Quantity * od.UnitPrice) between 500 and 2000
 
 -- Left Join, Right Join, Full Join y Cross Join
 
--- Practica de utilización de Left Join
+-- Practica de utilizaciï¿½n de Left Join
 
 -- Seleccionar los datos que se van a utilizar para insertar
 -- en la tabla products_new

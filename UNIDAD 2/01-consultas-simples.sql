@@ -18,7 +18,7 @@ select *from Shippers;
 select * from categories;
 select * from [Order Details]
 
--- Proyección 
+-- Proyecciï¿½n 
 select ProductID, ProductName, UnitPrice, UnitsInStock 
 from products;
 
@@ -32,16 +32,16 @@ from Employees;
 
 -- En base a la consulta anterior, visualizar es employeeid
 -- como numero empleado, firstname como primerNombre,
--- Title como cargo, city como ciudad, country con país.
+-- Title como cargo, city como ciudad, country con paï¿½s.
 
 select EmployeeID as 'Numero Empleado', 
 FirstName as primernombre, Title 'cargo', City as ciudad, 
-Country as país
+Country as paï¿½s
 from Employees;
 
 select EmployeeID as [Numero Empleado], 
 FirstName as primernombre, Title 'cargo', City as ciudad, 
-Country as país
+Country as paï¿½s
 from Employees;
 
 -- Campos calculados 
@@ -51,13 +51,13 @@ from Employees;
 select *,(UnitPrice * Quantity) as importe 
 from [Order Details];
 
--- Selecionar las fechas de orden,y año, mes y dia, el cliente
+-- Selecionar las fechas de orden,y aï¿½o, mes y dia, el cliente
 -- que las ordeno y el empleado que la realizo
 
 select OrderDate as 'Fecha de Orden',
-year(OrderDate) as 'Año de la orden', 
+year(OrderDate) as 'Aï¿½o de la orden', 
 month(OrderDate) as 'Mes de la Orden', 
-day(OrderDate) as 'Día de la orden',
+day(OrderDate) as 'Dï¿½a de la orden',
 CustomerID, EmployeeID 
 from Orders;
 
@@ -69,7 +69,7 @@ select distinct Country From Customers
 order by country 
 
 -- Clausula where 
--- Operadores relacionales o test de comparación (<,>,=,<=,>=, != o <>)
+-- Operadores relacionales o test de comparaciï¿½n (<,>,=,<=,>=, != o <>)
 
 
 -- Seleccionar el cliente BOLID
@@ -82,25 +82,25 @@ where CustomerID = 'BOLID';
 -- nombre de la empresa, contacto, ciudad y pais, 
 -- de alemania
 
-select customerid as Numero, CompanyName as Compañia, 
+select customerid as Numero, CompanyName as Compaï¿½ia, 
 ContactName as [Nombre del Contacto], 
 city as ciudad, 
-country as país 
+country as paï¿½s 
 from Customers
 where country = 'germany'
 
 -- seleccionar todos los clientes que no sean de Alemania
-select customerid as Numero, CompanyName as Compañia, 
+select customerid as Numero, CompanyName as Compaï¿½ia, 
 ContactName as [Nombre del Contacto], 
 city as ciudad, 
-country as país 
+country as paï¿½s 
 from Customers
 where country != 'germany'
 
-select customerid as Numero, CompanyName as Compañia, 
+select customerid as Numero, CompanyName as Compaï¿½ia, 
 ContactName as [Nombre del Contacto], 
 city as ciudad, 
-country as país 
+country as paï¿½s 
 from Customers
 where country <> 'germany'
 
@@ -134,21 +134,21 @@ select * from [Order Details]
 where Quantity >= 40
 
 -- Mostra el nombre completo del empleado, su numero de empleado, 
--- fecha de nacimiento, la ciudad y fecha de conrtratación y esta debe 
+-- fecha de nacimiento, la ciudad y fecha de conrtrataciï¿½n y esta debe 
 -- ser de aquellos que fueron contratados despues de 1993, 
--- Los resultados en sus encabezados deben ser mostrados en español
+-- Los resultados en sus encabezados deben ser mostrados en espaï¿½ol
 
 select EmployeeID as 'Numero', 
 FirstName as 'Primer Nombre', 
 LastName as 'Apellido', BirthDate as 'Fecha Nacimiento', 
-city as 'Ciudad', HireDate as 'Fecha de Contratación'  
+city as 'Ciudad', HireDate as 'Fecha de Contrataciï¿½n'  
 from Employees
 where year(HireDate) > 1993
 
 
 select EmployeeID as 'Numero', 
 (FirstName + '  ' + LastName) as 'Nombre Completo' , BirthDate as 'Fecha Nacimiento', 
-city as 'Ciudad', HireDate as 'Fecha de Contratación'  
+city as 'Ciudad', HireDate as 'Fecha de Contrataciï¿½n'  
 from Employees
 where year(HireDate) > 1993
 
@@ -156,7 +156,7 @@ where year(HireDate) > 1993
 select EmployeeID as 'Numero', 
 Concat(FirstName, ' ', LastName, ' - ', Title) as [Nombre Completo]
 ,BirthDate as 'Fecha Nacimiento', 
-city as 'Ciudad', HireDate as 'Fecha de Contratación'  
+city as 'Ciudad', HireDate as 'Fecha de Contrataciï¿½n'  
 from Employees
 where year(HireDate) > 1993
 
@@ -165,7 +165,7 @@ where year(HireDate) > 1993
 select EmployeeID as 'Numero', 
 Concat(FirstName, ' ', LastName, ' - ', Title) as [Nombre Completo]
 ,BirthDate as 'Fecha Nacimiento', 
-city as 'Ciudad', HireDate as 'Fecha de Contratación', ReportsTo as 'Jefe' 
+city as 'Ciudad', HireDate as 'Fecha de Contrataciï¿½n', ReportsTo as 'Jefe' 
 from Employees
 where ReportsTo != 2
 

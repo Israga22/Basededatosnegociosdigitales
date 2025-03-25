@@ -29,7 +29,7 @@ avg(UnitsInStock)
 from Products;
 
 -- Seleccionar cuantos pedidos existen 
-select count(*) as [Número de Pedidos] 
+select count(*) as [Nï¿½mero de Pedidos] 
 from Orders
 
 -- Calcula el total de dinero vendido
